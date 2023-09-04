@@ -1,7 +1,11 @@
+'use client';
+import { NextUIProvider } from '@nextui-org/react';
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from "next/link";
+import Menu from '@/component/navbar/navbar';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,14 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-          <nav className="px-20 flex justify-between mt-3">
-              <Link href="/">Home</Link>
-              <div className="flex items-center gap-x-8">
-                  <Link href="/exhibition">Exhibition</Link>
-                  <Link href="/about">About</Link>
-              </div>
-          </nav>
-          {children}
+        <NextUIProvider>
+          <NextThemesProvider attribute="class" defaultTheme="dark">
+            <Menu></Menu>
+            {children}
+          </NextThemesProvider>
+        </NextUIProvider >
       </body>
     </html>
   )
