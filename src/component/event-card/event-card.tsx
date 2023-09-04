@@ -15,7 +15,7 @@ export default function EventCard({ ...props }) {
                     <div className='flex justify-between gap-3 my-5 -translate-y-5 max-h-60' key={index}>
                         <img srcSet={`${item?.url} 2x`} alt={item?.title} title={item?.title} className='min-[169px]:max-w-[10rem] sm:min-w-[10rem] md:min-w-[20rem] xl:min-w-[30rem] max-h-60' />
                         <div className='flex flex-col justify-between gap-2'>
-                            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
+                            <h3 className='font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
                             <p className='whitespace-pre-line truncate'>{content && content.length > showWord ? content.slice(0, showWord) + '...' : content}</p>
                             <a href="#"><i className='after:content-[">"] after:ml-2'>xem thêm</i></a>
                         </div>
